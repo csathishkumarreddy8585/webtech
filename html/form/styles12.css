@@ -1,0 +1,49 @@
+body
+{
+    
+    background-image: url("https://media.istockphoto.com/id/1534040386/photo/an-outdoor-bamboo-gazebo-nestled-amidst-lush-greenery-offering-serene-relaxation-after-a.jpg?s=1024x1024&w=is&k=20&c=puHgSbTQpBTWvqIBd69gDXvBgDwpor6-fdYJoU0Hihc=");
+    background-repeat: no-repeat;
+    background-size: cover;    
+    
+    
+}
+h1
+{
+    font-family: Old English Text MT,sans-serif;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 0px 0px 20px red;
+   
+}
+fieldset
+{
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px 20px 10px 20px;
+}
+
+
+form>fieldset>legend>button
+{
+    background-color: aqua;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:#003718;
+}
+table
+{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    width: 100%;
+    
+}
+table>tr>td
+{
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px 20px 10px 20px;
+    
+}

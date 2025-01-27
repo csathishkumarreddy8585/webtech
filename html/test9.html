@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+            box-shadow: 0 0 10px black;
+            border: 4px solid honeydew;
+            width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            margin: 80px 100px;
+           text-align: center;
+            position: relative;
+            overflow: hidden;
+            
+
+        }
+        div>img
+        {
+            
+            width: inherit;
+            height: inherit;
+            filter: grayscale(100%);
+            transition: all 1s linear 1s;
+            box-shadow: 0 0 50px #e07600;
+        }
+        div:hover
+        {
+            cursor: pointer;
+            box-shadow: 0 0 50px #e07600;
+        }
+        div:hover>img
+        {
+            filter: grayscale(0%);
+            transform: scale(1.2,1.2);
+        }
+        div>#curtain
+        {
+            background-color: aqua;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            transition: all 1s linear 1s;
+            position:absolute;
+             overflow: hidden
+        }
+        div:hover>#curtain
+        {
+            transform: translateY(-100%)
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+       <img src="https://www.templepurohit.com/wp-content/uploads/2018/03/Lord-Ram-History.jpg" alt="">
+       <div id="curtain"></div>
+    </div>
+
+    <div>
+        <img src="https://documents.iplt20.com/ipl/IPLHeadshot2024/2.png" alt="">
+        <div id="curtain"></div>
+     </div>
+    
+</body>
+</html>

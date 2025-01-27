@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="./../fontawesome/fa/css/all.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+           
+            
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            
+        }
+        nav {
+            background-color: #008080; 
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        nav h1
+        {  
+            font-size: 40px;
+        }
+        fieldset {
+            margin: 20px auto;
+            padding: 25px;
+            width: 90%;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        fieldset > h1 {
+            color: #6d5f5f;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        fieldset > p {
+            margin-left: 170px;
+            font-size: 1.1em;
+            color: #565555;
+        }
+        fieldset > button {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        fieldset > button:hover {
+            background-color: #cc7a00;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 15px;
+            border: 2px solid #ddd;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        th {
+            background-color: #008080; 
+            color: white;
+        }
+        td {
+            background-color: #fafafa;
+        }
+        td:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 7px;
+            
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #c2c573;
+        }
+        #dec, #inc {
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+        i {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Amazon</h1>
+    </nav>
+    
+    <fieldset>
+        <h1>CartModule:</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet harum dolore tempora omnis officia ut, hic cumque, eaque facere officiis, quos ullam iusto id. Placeat, repellat in. Cumque, inventore? Sit illum eos, officiis rem, molestias ullam aut ipsum illo et, ad blanditiis? At laudantium odio quo est, quidem, voluptates molestiae aspernatur dolorum culpa aperiam provident eaque explicabo unde sunt?</p>
+        <button>Checkout</button>
+    </fieldset>
+
+    <fieldset>
+        <table>
+            <tr>
+                <th>pid</th>
+                <th>Pimg</th>
+                <th>Pname</th>
+                <th>Pprice</th>
+                <th>Pqty</th>
+                <th>Tprice</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td><img src="https://logos-world.net/wp-content/uploads/2020/04/Puma-Logo.png" alt="Puma Image" style="width:50px;"></td>
+                <td>Puma</td>
+                <td id="pprice">2999.00</td> <!-- Unit price -->
+                <td>
+                    <button id="dec"><i class="fa-solid fa-minus"></i></button>
+                    <span id="count">1</span>  <!-- Default quantity is 1 -->
+                    <button id="inc"><i class="fa-solid fa-plus"></i></button>
+                </td>
+                <td id="tprice">2999.00</td> <!-- Total price -->
+            </tr>
+        </table>
+    </fieldset>
+
+    <script>
+        let countTag = document.querySelector('#count');
+        let count = 0;  // Default quantity
+        countTag.textContent = count;
+
+        let ppriceTag = document.querySelector('#pprice');
+        let tpriceTag = document.querySelector('#tprice');
+
+        let unitPrice = parseFloat(ppriceTag.textContent);  // Get the unit price as a number
+        let totalPrice = unitPrice * count;  // Initial total price
+        tpriceTag.textContent = totalPrice.toFixed(2);  // Set the total price
+
+        function updateTotalPrice() {
+            totalPrice = unitPrice * count;
+            tpriceTag.textContent = totalPrice.toFixed(2);  // Update the total price
+        }
+
+        function incCount() {
+            count++;
+            countTag.textContent = count;
+            updateTotalPrice();  // Update total price when incremented
+        }
+
+        function decCount() {
+            if (count > 0) {  // Ensure count does not go below 1
+                count--;
+                countTag.textContent = count;
+                updateTotalPrice();  // Update total price when decremented
+            }
+        }
+
+        let inc_btn = document.getElementById('inc');
+        inc_btn.addEventListener('click', incCount);
+
+        let dec_btn = document.querySelector('#dec');
+        dec_btn.addEventListener('click', decCount);
+    </script>
+</body>
+</html>
