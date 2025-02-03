@@ -1,0 +1,1 @@
+let emp_1={EmpId=101,Ename=sathish,Egender=Male,Edesignation=python developer,Ecompany}
